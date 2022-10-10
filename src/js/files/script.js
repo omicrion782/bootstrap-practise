@@ -6,18 +6,71 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 
-
-
-
-
-
-
 window.onload = function () {
 
-setTimeout(function(){
-    console.log('хуй')
-}, 3000)
-    
+if (isMobile.any()) {
+    document.body.classList.add("_touch");
+} else {
+    document.body.classList.add("_pc");
+}
+
+document.addEventListener('click', documentAction)
+
+function documentAction (e) {
+
+    const el = e.target;
+    console.log(el);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

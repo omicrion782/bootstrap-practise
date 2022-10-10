@@ -131,7 +131,7 @@ import * as flsForms from "./files/forms/forms.js";
 Документация плагина: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
-// import "./files/sliders.js";
+import "./files/sliders.js";
 
 
 
@@ -147,32 +147,6 @@ import * as flsForms from "./files/forms/forms.js";
 
 // SCSS стили слайдера
 // в конце src\js\files\slick.min.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

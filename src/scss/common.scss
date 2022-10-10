@@ -1,1 +1,81 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+
+[class*="__title"], .title{
+    font-weight: bold;
+    font-size: 24px;
+    color: $patternLightBlack;
+
+    &[class*="_red"]{
+        color: $patternRed;
+    }
+}
+
+.line {
+    border-top: 3px solid $patternRed;
+    width: 50px;
+}
+
+.dotted {
+    @include adaptiv-value("margin-bottom", 75, 30, 1);
+
+    text-align: center;
+    &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    @include adaptiv-value("height", 400, 200, 1);
+        
+
+    
+    @media (max-width:$mobile){
+        height: auto;
+         max-height: 100%; 
+    }
+
+    @media (max-width:$mobile){
+         padding-bottom: 15px; 
+    }
+    }
+
+    &__title {
+        color: white;
+        @include adaptiv-value("line-height", 58, 25, 1);
+        @include adaptiv-value("font-size", 34, 16, 1);
+        padding: 15px 40px;
+        @include adaptiv-value("padding-left", 40, 20, 1);
+        @include adaptiv-value("padding-right", 40, 20, 1);
+    }
+
+    &__text{
+        
+    }
+
+    .btn{
+        margin-bottom: 15px;
+    }
+
+}
+
+.lead {
+
+    margin-right: calc(150px / 1200px) * 100%;
+	margin-left: calc(150px / 1200px) * 100%;
+
+
+    text-align: center;
+    margin-bottom: calc(65px / 1200px) * 100%;
+
+    &__title {
+        margin-bottom: calc(30px / 1200px) * 100%;
+    }
+
+    &__text {
+
+        color: #4a4a4a;
+        @include adaptiv-value("font-size", 16, 12, 1);
+        @include adaptiv-value("line-height", 24, 18, 1);
+    }
+}

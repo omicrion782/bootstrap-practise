@@ -1,3 +1,169 @@
-//====================================================================================================
 
-//====================================================================================================
+
+
+
+
+
+
+
+
+
+
+.footer {
+
+    &__wrapper {
+        background: #343434;
+        background: url('@img/footer.jpg') no-repeat 100%;
+        background-size: cover;
+        
+    }
+
+    &__container {}
+
+    &__body {
+        color: #fff;
+
+
+        padding-top: calc(100px / 1200px) * 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch; //?
+
+        padding-bottom: calc(50px / 1200px) * 100%;
+    }
+
+    &__column {}
+}
+
+.column-left {
+
+    width: 42%;
+
+    &__title {
+        @include adaptiv-value("font-size", 32, 16, 1);
+        
+
+    }
+
+    &__text {
+        margin: calc(38px / 1200px) * 100% 0 calc(30px / 1200px) * 100% 0;
+        font-size: 14px;
+        line-height: 20px;
+
+
+    }
+
+    &__line {
+
+    }
+
+    &__contacts {
+        margin: calc(50px / 1200px) * 100% 0 0 0;
+    }
+
+    &__contacts div{
+        &:not(:last-child) {
+            margin-bottom: calc(30px / 1200px) * 100%;
+        }
+    }
+
+}
+
+.line {}
+
+.contacts {
+
+    &__addres {}
+
+    &__phone {}
+
+    &__mail {}
+}
+
+.contacts * {
+    font-size: 14px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    &::before {
+            color: $patternRed;
+            font-weight: normal;
+            margin-right: 15px;
+
+            border: 1px solid $patternRed;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+}
+
+
+
+.column-right {
+
+    width: 42%;
+
+    &__title {
+        @include adaptiv-value("font-size", 32, 16, 1);
+        
+    }
+
+    &__line {
+        margin-top: calc(16px / 1200px) * 100%;
+    }
+
+    &__text {
+        margin: calc(50px / 1200px) * 100% 0 calc(38px / 1200px) * 100% 0;
+        
+    }
+
+    &__form {}
+}
+
+.title {}
+
+.form {
+    
+    border: 1px solid rgb(41, 150, 193);
+
+
+    &__body {}
+
+    &__input {
+        display: block;
+        width: 100%;
+        height: 45px;
+
+        background-color: transparent;
+        border: 1px solid white;
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 45px;
+        color: #fff;
+        padding: 0 15px;
+    }
+
+    &__textarea{
+        display: block;
+        width: 100%;
+        height: 180px;
+
+        overflow: auto;
+        background-color: transparent;
+        border: 1px solid white;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        padding: 15px;
+    }
+
+    &__submit {
+        float: right;
+        margin-top: calc(40px / 1200px) * 100%;
+    }
+}
+
+.btn {}
