@@ -57,7 +57,7 @@ flsFunctions.isWebp();
 Документация: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Попапы
@@ -218,4 +218,3 @@ import "./files/gallery.js";
 /* Подключаем файлы со своим кодом */
 import "./files/script.js";
 //============================================================================================================================================================================================================================================
-console.log('d');

@@ -3,7 +3,35 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
+
+	@media (max-width:$mobile){
+		  
+	color: $patternRed;
+	@include adaptiv-value("font-size", 24, 18, 1);
+	font-weight: bold;
+
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+	
+	&::before{
+		transition: all 0.3s ease 0s;
+		font-size: 15px;
+		margin-left: 5px;
+	}
+	._showmore-active &{
+		color: #343434;
+		&::before{
+			transform: rotate(180deg);
+		}
+	}
+
 	span {
+		
 		&:last-child {
 			display: none;
 		}
