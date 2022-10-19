@@ -1,22 +1,13 @@
-
-// при добавлении класса иконки с помощью html, она автоматом становится блочной.
-// при добавлении класса иконки с помощью @extend, и присвоении для его псевдоэлемента шаблона %ic, иконка остаётся строчной
-@font-face {
-	font-family: 'icomoon';
-	src: url('fonts/icomoon.eot?qgp2e1');
-	src: url('fonts/icomoon.eot?qgp2e1#iefix') format('embedded-opentype'),
-		// url('fonts/icomoon.ttf?qgp2e1') format('truetype'), //fixed
-		url('fonts/icomoon.woff?qgp2e1') format('woff'),
-		url('fonts/icomoon.svg?qgp2e1#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: block;
-}
-
 [class^="_icon-"],
 [class*=" _icon-"] {
+
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'icomoon' !important;
+	&::before {
+		////// собственный фикс
+		font-family: 'icomoon' !important;
+
+	}
+
 	speak: never;
 	font-style: normal;
 	font-weight: normal;

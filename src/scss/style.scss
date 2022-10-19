@@ -30,7 +30,7 @@ $patternLightBlack: #343434;
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1600;
+// $maxWidth: 1600; // 1600
 // Ширина ограничивающего контейнера (0 = нет ограничения)
 $maxWidthContainer: 1200;
 // Общий отступ у контейнера
@@ -88,6 +88,8 @@ body {
 		box-sizing: content-box;
 		margin: 0 auto;
 	}
+
+	position: relative;
 }
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
@@ -195,12 +197,18 @@ body {
 	color: white;
 	&__wrapper {}
 
+
+
 	&__container {
 	}
 
-	&__home {}
+	&__home {
+		
+	}
 
-	&__services {}
+	&__services {
+		
+	}
 
 	&__about-us {}
 
@@ -217,7 +225,7 @@ body {
 		position: absolute;
 		@include adaptiv-value("top", 270, 50, 1);
 		@media (max-width:$mobile){
-			  top: 60px;
+			@include adaptiv-value("top", 100, 60, 1);
 		}
 	}
 
@@ -294,7 +302,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		
-		border: 1px solid #000;
+
 		
 	}
 
@@ -720,6 +728,16 @@ justify-content: center;
 			top: 100%;
 		}
 	}
+
+	@media (max-width:$mobile){
+		&::before {
+			border: 20px solid transparent;
+			border-bottom: 25px solid #343434;
+			left: 20px;
+			transform: translate(0, -95%);
+			top: 0;
+		}
+	}
 }
 // 
 .news-item5 {
@@ -742,6 +760,16 @@ justify-content: center;
 		right: 30px;
 		transform: translate(0, -95%);
 		top: 0;
+	}
+
+	@media (max-width:$mobile){
+ 		&::before {
+			border: 20px solid transparent;
+			border-bottom: 25px solid #343434;
+			left: 20px;
+			transform: translate(0, -95%);
+			top: 0;
+		}
 	}
 }
 

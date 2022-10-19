@@ -21,7 +21,7 @@
 						</div>
 					</div>
 
-					<section class="page__services services">
+					<section class="page__services services nav-intersection-item">
 							<div class="services__container">
 								<div class="services__body">
 									<div class="services__lead lead">
@@ -134,21 +134,20 @@
 						</div>
 					</div>
 
-					<section class="page__about-us about-us">
-							<div class="about-us__container">
-								<div class="about-us__body">
-
-									<div class="about-us__lead lead">
-										<div class="lead__title">
-											ABOUT US
-										</div>
-										<div class="lead__text">
-											SKOKOV is one of the world's leading management consulting firms. We care for our clients' business as our own, they know we're in this together
-										</div>
+					<section class="page__about-us about-us nav-intersection-item">
+						<div class="about-us__container">
+							<div class="about-us__body">
+								<div class="about-us__lead lead">
+									<div class="lead__title">
+										ABOUT US
 									</div>
+									<div class="lead__text">
+										SKOKOV is one of the world's leading management consulting firms. We care for our clients' business as our own, they know we're in this together
+									</div>
+								</div>
 
-									<div class="about-us__content">
-										<article class="about-us__what-we-do what-we-do">
+								<div class="about-us__content">
+									<article class="about-us__what-we-do what-we-do">
 											<h2 class="what-we-do__title_red title">WHAT WE DO</h2>
 											<div class="what-we-do__line line"></div>
 											<p class="what-we-do__text">
@@ -169,9 +168,9 @@
 												Results Delivery®, helps clients measure and manage risk and overcome the 
 												odds to realize results.
 											</p>
-										</article>
+									</article>
 
-										<div class="about-us__clients clients">
+									<div class="about-us__clients clients">
 											<h2 class="clients__title_red title">OUR CLIENTS</h2>
 											<div class="clients__line line"></div>
 											
@@ -254,15 +253,12 @@
 												<!-- <div class="swiper-scrollbar"></div> -->
 											</div>
 
-										</div>
+									</div>
 
-										<div class="about-us__team team">
-											<h2 class="team__title_red title">OUR TEAM</h2>
-											<div class="team__line line"></div>
-
-											<div data-showmore="items" data-showmore-media="767,max" class="showmore-team">
-
-
+									<div class="about-us__team team">
+										<h2 class="team__title_red title">OUR TEAM</h2>
+										<div class="team__line line"></div>
+										<div data-showmore="items" data-showmore-media="767,max" class="showmore-team">
 											<div data-showmore-content="1" class="showmore-team__content team__grid grid-team">
 
 												<div class="grid-team__item -ibg">
@@ -327,7 +323,7 @@
 									</div>
 								</div>
 							</div>
-					</div>
+					</section>
 
 					<div class="page__dotted-play dotted-play dotted ">
 						<div class="dotted__content">
@@ -338,9 +334,8 @@
 							</div>
 						</div>
 					</div>
-					
 
-					<section class="page__news news">
+					<section class="page__news news nav-intersection-item">
 						<div class="news__container">
 							<div class="news__body">
 								<div class="news__lead lead">
@@ -353,7 +348,9 @@
 								</div>
 								<div class="news__grid">
 									<div class="news__item news-item1 -ibg">
-										<img src="@img/news/n1.png" alt="">
+										<a href="./post1.html">
+											<img src="@img/news/n1.png" alt="">
+										</a>
 									</div>
 									<div class="news__item news-item2 _text">
 
@@ -365,7 +362,9 @@
 
 									</div>
 									<div class="news__item news-item3 -ibg">
-										<img src="@img/news/n2.png" alt="">
+										<a href="">
+											<img src="@img/news/n2.png" alt="">
+										</a>
 									</div>
 									<div class="news__item news-item4 _text">
 										<div class="news__item-title">Reimagining IT for an omnichannel world
@@ -376,7 +375,9 @@
 										<div class="news__item-date">08.20.2014</div>
 									</div>
 									<div class="news__item news-item5 -ibg">
-										<img src="@img/news/n3.png" alt="">
+										<a href="">
+											<img src="@img/news/n3.png" alt="">
+										</a>
 									</div>
 									<div class="news__item news-item6 _text">
 										<div class="news__item-title">Making the most of generation assets in turbulent times
@@ -393,8 +394,7 @@
 						</div>
 					</section>
 
-
-					<section class="page__contact-us contact-us">
+					<section class="page__contact-us contact-us nav-intersection-item">
     					<div class="contact-us__wrapper">
     					    <div class="contact-us__container">
     					        <div class="contact-us__body">
@@ -439,13 +439,11 @@
 					</section>
 
 				</div>
-				
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
 		@@include('html/_popup.htm',{})
 		@@include('html/_js.htm',{})
-
 	</body>
 </html>
 

@@ -3,9 +3,9 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
-
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 	@media (max-width:$mobile){
-		  
+	
 	color: $patternRed;
 	@include adaptiv-value("font-size", 24, 18, 1);
 	font-weight: bold;
