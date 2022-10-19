@@ -282,8 +282,8 @@ body {
 }
 
 .dotted-contact {
-	background: url('../img/dotted/dotted-contact.png');
-	background-size: cover;
+	background: url('../img/dotted/dotted-contact.png') center / cover no-repeat;
+
 }
 
 
@@ -344,7 +344,7 @@ body {
 
 	@media (min-width:$mobile){
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 		gap: 55px;
 	
 	}
@@ -377,7 +377,7 @@ body {
 		grid-template-rows: auto;
 		row-gap: 30px;
 		@media (min-width:$tablet){
-			grid-template: repeat(2, auto) / repeat(2, 1fr);
+			grid-template: auto auto / 1fr 1fr;
 				.team {
 					grid-column: span 2;
 				}
@@ -484,7 +484,7 @@ justify-content: center;
 	.grid-team {
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
 		&__item {
 			padding-bottom: calc(200px / 200px)* 100%;
@@ -533,8 +533,7 @@ justify-content: center;
 
 .dotted-play {
 
-	background: url('@img/dotted/dotted-play.png');
-	background-size: cover;
+	background: url('@img/dotted/dotted-play.png') center / cover no-repeat;;
 
 	&__play {
 		@include adaptiv-value("width", 90, 50, 1);
@@ -579,27 +578,56 @@ justify-content: center;
 
 	&__grid {
 		display: grid;
-		justify-content: center;
+		width: 90%;
+		margin: 0 auto;
 		
-		grid-template: [start] "pic1 pic1 text2 pic3" 1fr [row2]
-						[row2] "text4 pic5 pic5 text6" 1fr [row-end] / 1fr 1fr 1fr 1fr;
+
+		
+
+		
+	// 	grid-template: [start] "pic1 pic1 text2 pic3" 1fr [row2]
+	// 					[row2] "text4 pic5 pic5 text6" 1fr [row-end] / 1fr 1fr 1fr 1fr;
+
+		grid-template-areas: "pic1 pic1 text2 pic3"
+							"text4 pic5 pic5 text6";
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr 1fr;
+
+	// 	@media (max-width:$tablet){
+	// 		max-height: 100%;
+	// 		grid-template: [start] "pic1 pic1" 1fr [row2]
+	// 						[row2] "text2 pic3" 1fr [row3]
+	// 						[row3] "text4 text6" 1fr [row4]
+	// 						[row4] "pic5 pic5" 1fr [row-end] / 40% 40%;
+	// 	}
+
 
 		@media (max-width:$tablet){
 			max-height: 100%;
-			grid-template: [start] "pic1 pic1" 1fr [row2]
-							[row2] "text2 pic3" 1fr [row3]
-							[row3] "text4 text6" 1fr [row4]
-							[row4] "pic5 pic5" 1fr [row-end] / 40% 40%;
+			grid-template-areas: "pic1 pic1"
+								"text2 pic3"
+								"text4 text6"
+								"pic5 pic5";
+			grid-template-columns: 50% 50%;
+			grid-template-rows: repeat(4, 1fr);
 		}
+
+
+	// 	@media (max-width:$mobile){
+	// 		max-height: 100%;
+	// 		grid-template: [start] "pic1" 1fr [row2]
+	// 						[row2] "text2" 1fr [row3]
+	// 						[row3] "pic3" 1fr [row4]
+	// 						[row4] "text4" 1fr [row5]
+	// 						[row5] "pic5" 1fr [row6]
+	// 						[row6] "text6" 1fr [row-end] / 100%
+	// 	}
 
 		@media (max-width:$mobile){
 			max-height: 100%;
-			grid-template: [start] "pic1" 1fr [row2]
-							[row2] "text2" 1fr [row3]
-							[row3] "pic3" 1fr [row4]
-							[row4] "text4" 1fr [row5]
-							[row5] "pic5" 1fr [row6]
-							[row6] "text6" 1fr [row-end] / 100%
+			grid-template-areas: "pic1" "text2" "pic3" "text4" "pic5" "text6";
+			grid-template-columns: 100%;
+			grid-template-rows: repeat(6, 1fr);
 		}
 	}
 
@@ -723,7 +751,7 @@ justify-content: center;
 		&::before {
 			border: 20px solid transparent;
 			border-top: 20px solid #343434;
-			right: 20px;
+			left: 20px;
 			transform: translate(0, -5%);
 			top: 100%;
 		}
@@ -757,7 +785,7 @@ justify-content: center;
 
 		position: absolute;
 		z-index: 1;
-		right: 30px;
+		right: 20px;
 		transform: translate(0, -95%);
 		top: 0;
 	}
@@ -791,13 +819,10 @@ justify-content: center;
 
 	&__body {
 		color: #fff;
-
-
 		padding-top: calc(100px / 1200px) * 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: stretch; //?
-
 		padding-bottom: calc(60px / 1200px) * 100%;
 	}
 
@@ -810,32 +835,21 @@ justify-content: center;
 }
 
 .column-left {
-
-
-
 	&__title {
 		@include adaptiv-value("font-size", 32, 16, 1);
-
-
 	}
 
 	&__text {
 		margin: calc(38px / 1200px) * 100% 0 calc(30px / 1200px) * 100% 0;
 		@include adaptiv-value("font-size", 14, 10, 1);
 		@include adaptiv-value("line-height", 20, 16, 1);
-
-
 	}
 
 	&__line {}
 
 	&__contacts {
 		margin: calc(50px / 1200px) * 100% 0 0 0;
-		
 	}
-
-
-
 }
 
 .contacts * {
@@ -860,7 +874,6 @@ justify-content: center;
 		color: $patternRed;
 		font-weight: normal;
 
-
 		border: 1px solid $patternRed;
 		display: inline-block;
 		width: 30px;
@@ -872,20 +885,14 @@ justify-content: center;
 		left: 0;
 		top: 50%;
 		transform: translate(0,-50%);
-
-
 	}
 }
 
 
 
 .column-right {
-
-
-
 	&__title {
 		@include adaptiv-value("font-size", 32, 16, 1);
-
 	}
 
 	&__line {
@@ -894,7 +901,6 @@ justify-content: center;
 
 	&__text {
 		margin: calc(50px / 1200px) * 100% 0 calc(38px / 1200px) * 100% 0;
-
 	}
 
 	&__form {}
@@ -903,10 +909,7 @@ justify-content: center;
 .title {}
 
 .form {
-
 	border: 1px solid rgb(41, 150, 193);
-
-
 	&__body {
 		position: relative;
 		&::after{

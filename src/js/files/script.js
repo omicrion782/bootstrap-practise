@@ -87,8 +87,9 @@ function documentAction (e) {
 ////// FORM //////
 
     const contactForm = document.forms.contactForm;
-    contactForm.addEventListener("submit", sendMail);
-    
+    if (contactForm) {
+        contactForm.addEventListener("submit", sendMail);
+    }
     async function sendMail (e) {
         e.preventDefault()
 
