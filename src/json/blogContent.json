@@ -1,0 +1,40 @@
+{
+    "news": [
+        {
+            "nid": 4,
+            "url": "#",
+            "title": "How SaaS providers can use pricing to reach their goals",
+            "text": "The case for considering both customers' needs and nternal cost metrics.",
+            "date": "07.09.2014",
+            "image": "n4.jpg",
+
+            "blogIssue": "",
+            "blogSolutionTitle": "",
+            "blogSolutionText": ""
+        },
+        {
+            "nid": 5,
+            "url": "#",
+            "title": "Winning shoppers in the store",
+            "text": "With shoppers now making buying decisions in a few seconds, consumer goods companies need a fool-proof system for winning in stores.",
+            "date": "07.25.2014",
+            "image": "n5.jpg",
+
+            "blogIssue": "",
+            "blogSolutionTitle": "",
+            "blogSolutionText": ""
+        },
+        {
+            "nid": 6,
+            "url": "#",
+            "title": "Growing business opportunities for healthy living",
+            "text": "Consumers around the globe seek innovations for ealthier lives.",
+            "date": "06.23.2014",
+            "image": "n6.jpg",
+
+            "blogIssue": "",
+            "blogSolutionTitle": "",
+            "blogSolutionText": ""
+        }
+    ]
+}

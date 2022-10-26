@@ -1,0 +1,86 @@
+
+
+.blog {
+
+    &__container {
+
+    }
+
+    &__picture {}
+
+    &__issue {}
+
+    &__solution {}
+
+    &__comments {}
+}
+
+.picture {
+    height: 100%;
+    @include adaptiv-value("padding-bottom", 50, 20, 1);
+
+
+&__container {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__image {
+        width: 100%;
+        padding-bottom: calc(600px / 1200px) * 100%;
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: calc(700px / 1600px) * 100%;
+        max-width: 500px;
+        background-color: #343434;
+        @include adaptiv-value("height", 120, 80, 1);
+        padding: 10px;
+    }
+
+    &__title {
+
+        color: $patternRed;
+        @include adaptiv-value("font-size", 20, 12, 1);
+        @include adaptiv-value("line-height", 24, 16, 1);
+        
+        
+    }
+
+    .line{
+        @include adaptiv-value("margin-top", 15, 5, 1);
+    }
+}
+
+
+.issue {
+    margin: calc(45px / 1200px) * 100%;
+    margin-top: 0;
+    &__description {
+        @include adaptiv-value("font-size", 14, 12, 1);
+        @include adaptiv-value("line-height", 26, 22, 1);
+    }
+}
+
+.solution {
+
+    margin: calc(45px / 1200px) * 100%;
+        margin-top: 0;
+
+    &__title {
+        @include adaptiv-value("font-size", 18, 16, 1);
+        margin-bottom: calc(28px / 1200px) * 100%;
+    }
+
+    &__text {
+        @include adaptiv-value("font-size", 14, 12, 1);
+        @include adaptiv-value("line-height", 26, 22, 1);
+    }
+}

@@ -210,11 +210,22 @@ body {
 		
 	}
 
-	&__about-us {}
+	&__about-us {
+		.swiper-lazy{
+			opacity: 0;
+			transition: all 0.2s ease 0s;
+		}
+		.swiper-lazy.swiper-lazy-loaded{
+			opacity: 1;
+		}
+	}
 
 	&__news {}
 
 }
+
+
+
 
 
 ////////////////////////////////// home
@@ -533,7 +544,7 @@ justify-content: center;
 
 .dotted-play {
 
-	background: url('@img/dotted/dotted-play.png') center / cover no-repeat;;
+	background: url('@img/dotted/dotted-play.png') center / cover no-repeat;
 
 	&__play {
 		@include adaptiv-value("width", 90, 50, 1);
@@ -571,77 +582,57 @@ justify-content: center;
 	&__container {
 	}
 
-	&__body {}
+	&__body {
+		margin: 0 auto;
+		@media (max-width:$tablet){
+			width: 90%;
+		}
+		@media (max-width:$mobile){
+			width: 100%;
+		}
+	}
 
 	&__lead {
 	}
 
 	&__grid {
 		display: grid;
-		width: 90%;
-		margin: 0 auto;
-		
-
-		
-
-		
-	// 	grid-template: [start] "pic1 pic1 text2 pic3" 1fr [row2]
-	// 					[row2] "text4 pic5 pic5 text6" 1fr [row-end] / 1fr 1fr 1fr 1fr;
-
+		width: 100%;
 		grid-template-areas: "pic1 pic1 text2 pic3"
 							"text4 pic5 pic5 text6";
 		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: 1fr 1fr;
-
-	// 	@media (max-width:$tablet){
-	// 		max-height: 100%;
-	// 		grid-template: [start] "pic1 pic1" 1fr [row2]
-	// 						[row2] "text2 pic3" 1fr [row3]
-	// 						[row3] "text4 text6" 1fr [row4]
-	// 						[row4] "pic5 pic5" 1fr [row-end] / 40% 40%;
-	// 	}
-
+		grid-template-rows: repeat(2, 1fr);
 
 		@media (max-width:$tablet){
-			max-height: 100%;
 			grid-template-areas: "pic1 pic1"
 								"text2 pic3"
 								"text4 text6"
 								"pic5 pic5";
-			grid-template-columns: 50% 50%;
+			grid-template-columns: 1fr 1fr;
 			grid-template-rows: repeat(4, 1fr);
 		}
 
-
-	// 	@media (max-width:$mobile){
-	// 		max-height: 100%;
-	// 		grid-template: [start] "pic1" 1fr [row2]
-	// 						[row2] "text2" 1fr [row3]
-	// 						[row3] "pic3" 1fr [row4]
-	// 						[row4] "text4" 1fr [row5]
-	// 						[row5] "pic5" 1fr [row6]
-	// 						[row6] "text6" 1fr [row-end] / 100%
-	// 	}
-
 		@media (max-width:$mobile){
-			max-height: 100%;
 			grid-template-areas: "pic1" "text2" "pic3" "text4" "pic5" "text6";
-			grid-template-columns: 100%;
-			grid-template-rows: repeat(6, 1fr);
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, auto);
 		}
 	}
 
-	&__item {
-		padding-bottom: 50px;
+
+	.news__item{
+		display: block;
+		@include adaptiv-value("padding-bottom", 300, 250, 1);
 	}
 
-	&__item._text{
+
+	.news__item._text, .load-news__item._text{
 		padding-bottom: 0;
 		position: relative;
 		background-color: #343434;
 	}
 
-	&__item-title {
+	.news__item-title, .load-news__item-title {
 		@include adaptiv-value("font-size", 20, 16, 1);
 		@include adaptiv-value("line-height", 26, 18, 1);
 		color: $patternRed;
@@ -653,13 +644,19 @@ justify-content: center;
 		}
 
 		@media (max-width:$tablet){
-			font-size: 20px;
+			font-size: 28px;
+			line-height: 32px;
+			padding: 20px;
+		}
+
+		@media (max-width:$mobile){
+			font-size: 22px;
 			line-height: 26px;
-			padding: 30px;
+			padding: 20px;
 		}
 	}
 
-	&__item-text {
+	.news__item-text, .load-news__item-text {
 		padding-bottom: 0;
 		font-size: 12px;
 		@include adaptiv-value("line-height", 20, 14, 1);
@@ -668,25 +665,138 @@ justify-content: center;
 		@include adaptiv-value("padding-bottom", 30, -50, 1);
 
 		@media (max-width:$tablet) {
-				font-size: 12px;
-				line-height: 20px;
-				padding: 0 30px 15px 30px;
+				font-size: 16px;
+				line-height: 22px;
+				padding: 0 20px 15px 20px;
 			}
+
+		@media (max-width:$mobile){
+			font-size: 14px;
+			line-height: 20px;
+			padding: 0 20px 15px 20px;
+		}
 	}
 
-	&__item-date {
-		font-size: 14px;
-
+	.news__item-date, .load-news__item-date {
+		font-size: 15px;
 		text-align-last: right;
 		padding: 0px 30px 0px 0px;
 		color: $patternRed;
+		padding-bottom: 10px;
+		margin-top: auto;
+	}
+}
 
+////////////////////////
+.load-news-button{
+	
+	display: block;
+	background-color: #343434;
+	color: $patternRed;
+	margin: calc(60px / 1200px) * 100% auto 0 auto;
+
+	border: 1px solid #000;
+	font-weight: bold;
+	@include adaptiv-value("font-size", 16, 13, 1);
+	@include adaptiv-value("min-height", 60, 30, 1);
+	@include adaptiv-value("min-width", 370, 185, 1);
+}
+
+
+.load-news{
+	overflow: hidden;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+
+
+	&__card{
+		display: flex;
 		@media (max-width:$mobile){
-			 padding-bottom: 10px; 
+			 flex-direction: column;
+			 justify-content: center;
 		}
+		&._odd-reverse{
+			@media (min-width:$mobile){
+				  
+			
+			flex-direction: row-reverse;
+			}
+		}
+	}
+
+	&__item{
+		width: 100%;
+		@include adaptiv-value("padding-bottom", 300, 250, 1);
+	}
+
+
+	&__item._text{
+		flex: 0 0 25%;
+		padding-bottom: 0;
+		@media (max-width:$tablet){
+			flex: 0 0 50%;
+		}
+		@media (max-width:$mobile){
+			flex: 0 0 25%;
+		}
+
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border: 20px solid transparent;
+			border-right: 25px solid #343434;
+
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			transform: translate(-95%, 0);
+			top: 30px;
+		}
+		._odd-reverse & {
+			&::before {
+				content: '';
+				display: inline-block;
+				width: 0;
+				height: 0;
+				border: 20px solid transparent;
+				border-left: 25px solid #343434;
+				position: absolute;
+				z-index: 1;
+				left: 100%;
+				transform: translate(0, 95%);
+				top: 0;
+			}
+		}
+	}
+}
+
+.load-news._odd-reverse {
+	&__item._text {
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ////////////////////////
 
 .news-item1 {
 	grid-area: pic1;
@@ -720,8 +830,6 @@ justify-content: center;
 				top: 0;
 			}
 	}
-	
-	
 }
 
 .news-item3 {
@@ -767,7 +875,8 @@ justify-content: center;
 		}
 	}
 }
-// 
+
+
 .news-item5 {
 	grid-area: pic5;
 }
@@ -810,8 +919,8 @@ justify-content: center;
 
 	&__wrapper {
 		background: #343434;
-		background: url('@img/footer.jpg') no-repeat 100%;
-		background-size: cover;
+		background: url('@img/footer.jpg') center / cover no-repeat;
+
 
 	}
 
@@ -822,35 +931,54 @@ justify-content: center;
 		padding-top: calc(100px / 1200px) * 100%;
 		display: flex;
 		justify-content: space-between;
-		align-items: stretch; //?
+		// align-items: stretch; //?
 		padding-bottom: calc(60px / 1200px) * 100%;
+
+
+
+
+
+		border: 1px solid rgb(87, 218, 17);
+		
+		@media (max-width:$mobile){
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
-	&__column {
-		width: 42%;
-		@media (max-width:$mobile){
-			width: 46%;
+	.column {
+		width: 85%;
+		@media (min-width:$mobile){
+			width: 45%;
+		}
+
+		&__title_red {
+			@include adaptiv-value("font-size", 32, 22, 1);
+			margin-bottom: calc(38px / 1200px) * 100%;
+		}
+		&__title_red.right{
+			margin-bottom: calc(16px / 1200px) * 100%;
+		}
+
+		&__text {
+			@include adaptiv-value("font-size", 14, 12, 1);
+			@include adaptiv-value("line-height", 20, 18, 1);
+			margin-bottom: calc(38px / 1200px) * 100%;
+		}
+	
+		&__line {
+			margin-bottom: calc(50px / 1200px) * 100%;
+		}
+	
+		&__contacts {
+
+		}
+		&:not(:last-child) {
+			padding-bottom: 40px;
 		}
 	}
 }
 
-.column-left {
-	&__title {
-		@include adaptiv-value("font-size", 32, 16, 1);
-	}
-
-	&__text {
-		margin: calc(38px / 1200px) * 100% 0 calc(30px / 1200px) * 100% 0;
-		@include adaptiv-value("font-size", 14, 10, 1);
-		@include adaptiv-value("line-height", 20, 16, 1);
-	}
-
-	&__line {}
-
-	&__contacts {
-		margin: calc(50px / 1200px) * 100% 0 0 0;
-	}
-}
 
 .contacts * {
 	border: 1px solid rgb(191, 191, 191);
@@ -862,7 +990,6 @@ justify-content: center;
 	}
 	text-transform: uppercase;
 	position: relative;
-	// padding-left: 45px;
 	@include adaptiv-value("padding-left", 45, 35, 1);
 
 	&:not(:last-child) {
@@ -886,24 +1013,6 @@ justify-content: center;
 		top: 50%;
 		transform: translate(0,-50%);
 	}
-}
-
-
-
-.column-right {
-	&__title {
-		@include adaptiv-value("font-size", 32, 16, 1);
-	}
-
-	&__line {
-		margin-top: calc(16px / 1200px) * 100%;
-	}
-
-	&__text {
-		margin: calc(50px / 1200px) * 100% 0 calc(38px / 1200px) * 100% 0;
-	}
-
-	&__form {}
 }
 
 .title {}
@@ -1012,7 +1121,7 @@ justify-content: center;
 
 
 
-
+@import "blog";
 
 @import "footer";
 

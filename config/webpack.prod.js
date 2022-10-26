@@ -25,7 +25,16 @@ if (!pugPages.length) {
 		replace: [
 			{ regex: '../img', to: 'img' },
 			{ regex: '@img', to: 'img', },
-			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
+			{ regex: 'NEW_PROJECT_NAME', to: rootFolder },
+
+
+			// //////////////// LAST PROBLEM
+
+			// file-include-webpack-plugin replace
+			//  regex как регулярное выражение
+			{ regex: /<img.*src.*>/, to: /<img.*data-src.*>/ },
+
+			// //////////////// LAST PROBLEM
 		],
 	})]
 }

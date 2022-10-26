@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -18,6 +18,7 @@ EffectFade, Lazy, Manipulation
 // Стили Swiper
 // Базовые стили
 import "../../scss/base/swiper.scss";
+import "../../scss/base/lazy.scss";
 // Полный набор стилей из scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
@@ -36,7 +37,7 @@ function initSliders() {
 		new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation, Pagination],
+			modules: [Navigation, Pagination, Lazy],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
@@ -44,11 +45,19 @@ function initSliders() {
 			autoHeight: true,
 			speed: 800,
 
+			// mousewheel: {   //
+			// 	invert: true,  //
+			// },			   //
+
 			//touchRatio: 0,
 			//simulateTouch: false,
 			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
+			preloadImages: false,
+			lazy: {
+				// loadPrevNext: true,  включает загрузку следующего слайда
+			},
+			watchSlidesProgress: true,
+
 
 			/*
 			// Эффекты
@@ -80,6 +89,8 @@ function initSliders() {
 				prevEl: '.swiper-button-prev',
 				nextEl: '.swiper-button-next',
 			},
+
+			
 
 			// Брейкпоинты
 			/*

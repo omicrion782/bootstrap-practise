@@ -49,7 +49,9 @@
     }
 
     &__text{
-        
+        @include adaptiv-value("padding-left", 60, 20, 1);
+        @include adaptiv-value("padding-right", 60, 20, 1);
+        line-height: 18px;
     }
 
     .btn{
@@ -60,8 +62,7 @@
 
 .lead {
 
-    margin-right: calc(150px / 1200px) * 100%;
-	margin-left: calc(150px / 1200px) * 100%;
+
 
 
     text-align: center;
@@ -74,7 +75,8 @@
     &__text {
 
         color: #4a4a4a;
-        @include adaptiv-value("font-size", 16, 12, 1);
+        @include adaptiv-value("font-size", 16, 13, 1);
         @include adaptiv-value("line-height", 24, 18, 1);
+        padding: 0 10px 0 10px;
     }
 }
