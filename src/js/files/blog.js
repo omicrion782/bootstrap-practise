@@ -1,6 +1,7 @@
 import { flsModules } from "./modules.js";
 import {mainPageLocation, blogPageLocation} from "./modules/window-location.js";
 
+
 if (document.querySelector('html').dataset.page !== "1") {
 window.onload = function () {
 

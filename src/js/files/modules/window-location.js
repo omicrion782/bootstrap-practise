@@ -2,5 +2,5 @@
 
 
 
-export let mainPageLocation = "http://192.168.100.2:8080/";
-export let blogPageLocation = "http://192.168.100.2:8080/blog.html";
+export let mainPageLocation = "http://192.168.100.4:8080/";
+export let blogPageLocation = "http://192.168.100.4:8080/blog.html";
