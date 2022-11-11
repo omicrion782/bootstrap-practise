@@ -1,0 +1,17 @@
+{
+  "js/ts.implicitProjectConfig.strictNullChecks": false,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "javascript.suggest.includeAutomaticOptionalChainCompletions": true,
+  "typescript.check.npmIsInstalled": true,
+  "javascript.validate.enable": true,
+  "javascript.suggest.names": false,
+  "typescript.validate.enable": false,
+  "html.validate.styles": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.implicitProjectConfig.strictFunctionTypes": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": false,
+  "js/ts.implicitProjectConfig.module": "ESNext",
+  "javascript.format.enable": true,
+  "js/ts.implicitProjectConfig.target": "ES2020",
+  "javascript.autoClosingTags": true
+}

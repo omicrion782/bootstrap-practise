@@ -1,6 +1,11 @@
+
+// import { flsModules } from "./modules.js";
+
+// import React from 'react';
+// import { createRoot } from 'react-dom/client'
+// 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 
 // class Square extends React.Component {
 

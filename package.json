@@ -18,6 +18,10 @@
 		"bem": "fls-bemtree-from-html"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.20.2",
+		"@babel/preset-env": "^7.20.2",
+		"@babel/preset-react": "^7.18.6",
+		"babel-loader": "^9.1.0",
 		"copy-webpack-plugin": "latest",
 		"css-loader": "latest",
 		"del": "latest",
@@ -70,6 +74,14 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"simplebar": "latest"
-	}
+	},
+	"babel": {
+    	"presets": [
+    	  "@babel/env",
+    	  "@babel/react"
+    	]
+  	}
 }

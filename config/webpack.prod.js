@@ -31,8 +31,8 @@ if (!pugPages.length) {
 			// //////////////// LAST PROBLEM
 
 			// file-include-webpack-plugin replace
-			//  regex как регулярное выражение
-			{ regex: /<img.*src.*>/, to: /<img.*data-src.*>/ },
+			//  regex как регулярное выражение // оказываетя to принимает callback 
+			// { regex: /<img.*src.*>/, to: /<img.*data-src.*>/ },
 
 			// //////////////// LAST PROBLEM
 		],
@@ -111,7 +111,21 @@ const config = {
 						}
 					}
 				]
-			}
+			},
+
+
+
+			{                // jsx
+        		test: /\.m?js$/,
+        		exclude: /(node_modules | files | libs)/,
+        		use: {
+        		  loader: "babel-loader"
+        		}
+      		}
+
+
+
+
 		],
 	},
 	plugins: [
